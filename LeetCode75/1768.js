@@ -79,6 +79,5 @@ function mergeStringInAlternate(string1, string2) {
     return mergedString
 } 
 
-fun
 //console.log(mergedString)
 

@@ -20,7 +20,7 @@ console.log('This is not a palindrom ',isPalindrome('abcdbca'))
 console.log('this is a palindrome',isPalindrome('abcdcba'))
 }
 
-function findSum( array, target) {
+const findSum = (array, target) => {
     //Given a sorted array, find if a given number can be obtained by suming any two array numbers
     let i = 0
     let j = array.length - 1

@@ -79,5 +79,49 @@ function mergeStringInAlternate(string1, string2) {
     return mergedString
 } 
 
-//console.log(mergedString)
+//----------------unit test------------------//
+function testEqualLength() {
+    const string1 = 'abc'
+    const string2 = 'pqr'
+    const mergedResult = mergeStringInAlternate(string1,string2)
+    
+    const expectedResult = 'apbqcr'
+    if(mergedResult !== expectedResult) {
+        return `test Equal Length failed, expected ${expectedResult}, receved ${mergedResult}`
+    } else {
+       
+       return `expected result '${expectedResult}' is the same as '${mergedResult}', testEqualLength passed`
+    }
+}
 
+function testString1IsLonger() {
+    const string1 = 'abcde'
+    const string2 = 'pqr'
+    const mergedResult = mergeStringInAlternate(string1,string2)
+    const expectedResult = 'apbqcrde'
+    if(mergedResult !== expectedResult) {
+        return `test Equal Length failed, expected ${expectedResult}, receved ${mergedResult}`
+    } else {
+        return `expected result '${expectedResult}' is the same as '${mergedResult}', testString1IsLonger passed`
+    }
+}
+
+function testString2IsLonger() {
+    const string1 = 'abc'
+    const string2 = 'pqrst'
+    const mergedResult = mergeStringInAlternate(string1,string2)
+    const expectedResult = 'apbqcrst'
+    if(mergedResult !== expectedResult) {
+        return `test Equal Length failed, expected ${expectedResult}, receved ${mergedResult}`
+    } else {
+        return `expected result '${expectedResult}' is the same as '${mergedResult}', testString2IsLonger passed`
+    }
+}
+
+const result1 = testEqualLength()
+const result2 = testString1IsLonger()
+const result3 = testString2IsLonger()
+
+console.log(result1)
+console.log(result2)
+console.log(result3)

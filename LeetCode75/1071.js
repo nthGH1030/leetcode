@@ -31,20 +31,34 @@ function gcdOfStrings(str1, str2) {
     let shorter = str1.length < str2.length ? str1 : str2;
     
     //get the gcd of the string
-    let remainder = longer % shorter; //30 = 210 / 45
-    let lastNonZeroRemainder 
+    let remainder = longer.length % shorter.length; //30 = 210 / 45
+    let lastNonZeroRemainder = shorter.length
+    let longerLength = longer.length
+    let shorterLength = shorter.length
     while (remainder != 0) {
 
         lastNonZeroRemainder = remainder; //30
-        longer = shorter //45
-        shorter = remainder //30
-        remainder = longer % shorter; // 15 = 45/30
+        longerLength = shorterLength //45
+        shorterLength = remainder //30
+        remainder = longerLength % shorterLength; // 15 = 45/30
+        console.log(remainder)
         
     }
-    return lastNonZeroRemainder
+
+    let gcdLength = lastNonZeroRemainder
+    console.log(gcdLength)
+    let candidate = shorter.substring(0, gcdLength);
+    console.log(candidate)
+    //handle case where shorter string contains exactly the substring
+    if(shorter.split(candidate).join('') === '' && longer.split(candidate).join('') === ('')) {
+        
+        return candidate
+    }
+
+    return ""
 }
 
-let gcd = gcdOfStrings('ABCABC', 'ABC')
-
+const str1 = "ABABABD"
+const str2 = "ABAB"
+let gcd = gcdOfStrings(str1, str2)
 console.log(gcd)
-
